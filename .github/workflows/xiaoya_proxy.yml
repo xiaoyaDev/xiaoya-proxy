@@ -25,9 +25,8 @@ jobs:
         name: Build xiaoya_proxy.jar
         id: build_jar
         run: |
-          cd xiaoya_proxy
           version=$(cat pom.xml | grep -A1 xiaoya_proxy | grep version | perl -pe "s|.*((\d+\.?){3,}).*|\1|")
-          echo "XIAOYA_PROXY_VERSION=${version}" >> $GITHUB_ENV
+          echo "XIAOYA_PROXY_VERSION=v${version}" >> $GITHUB_ENV
           mvn clean package
 
       - 
