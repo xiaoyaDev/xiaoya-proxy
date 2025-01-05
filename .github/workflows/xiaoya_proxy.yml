@@ -7,6 +7,8 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    permissions: 
+      contents: write
     steps:
       - 
         name: Checkout
@@ -30,14 +32,14 @@ jobs:
           mvn clean package
 
       - 
-        name: Docker meta
+        name: Docker Meta
         id: meta
         uses: docker/metadata-action@v5
         with:
           images: ${{ secrets.DOCKER_USERNAME }}/xiaoya-proxy
           tags: |
-            type=raw,value=latest
             type=raw,value=${{ env.XIAOYA_PROXY_VERSION }}
+            type=raw,value=latest
 
       - 
         name: Set Up QEMU
@@ -86,6 +88,5 @@ jobs:
         with:
           name: ${{ env.XIAOYA_PROXY_VERSION }}
           tag_name: ${{ env.XIAOYA_PROXY_VERSION }}
-          token: ${{ secrets.GITHUB_TOKEN }}
           files: |
             ./target/xiaoya_proxy-*.jar
