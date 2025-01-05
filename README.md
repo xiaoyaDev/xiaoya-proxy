@@ -12,3 +12,7 @@ docker run -d \
     -e TZ=Asia/Shanghai \
     ddsderek/xiaoya-proxy:latest
 ```
+
+## 许可证
+
+此项目根据 GNU General Public License v3.0 许可证进行许可，详见[`LICENSE`](LICENSE) 文件。
