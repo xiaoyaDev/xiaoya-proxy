@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.ddsrem</groupId>
     <artifactId>xiaoya_proxy</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <packaging>jar</packaging>
     <name>Xiaoya Proxy</name>
     <description>Xiaoya Alist Proxy</description>
